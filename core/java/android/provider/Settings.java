@@ -5513,6 +5513,12 @@ public final class Settings {
          */
         public static final String FINGERPRINT_WAKE_UNLOCK = "fingerprint_wake_unlock";
 
+
+        /** Volume rocker wake
+         * @hide
+         */
+        public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
@@ -5763,7 +5769,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE_VENDOR_HINT);
             PRIVATE_SETTINGS.add(DESKTOP_MODE);
-        }
+            PRIVATE_SETTINGS.add(VOLUME_ROCKER_WAKE);
 
         /**
          * These entries are considered common between the personal and the managed profile,

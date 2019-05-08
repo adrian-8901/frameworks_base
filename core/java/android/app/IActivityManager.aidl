@@ -760,4 +760,16 @@ interface IActivityManager {
      * </p>
      */
     int getBackgroundRestrictionExemptionReason(int uid);
+<<<<<<< HEAD
+=======
+
+    /**
+     *  Force full screen for devices with cutout
+     */
+    boolean shouldForceCutoutFullscreen(in String packageName);
+    /** 
+     *  Should disable touch if three fingers to screen shot is active?
+     */
+    boolean isSwipeToScreenshotGestureActive();
+>>>>>>> 9e9b706bc0f2 (fwb: Import SwipeToScreenshot implementation from MIUI)
 }

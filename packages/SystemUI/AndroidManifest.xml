@@ -352,9 +352,11 @@
     <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="android.permission.RECOVERY" />
 
+    <!-- DataSwitch tile -->
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+
     <application
         android:name=".SystemUIApplication"
-        android:persistent="true"
         android:allowClearUserData="false"
         android:backupAgent=".backup.BackupHelper"
         android:killAfterRestore="false"

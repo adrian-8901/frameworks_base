@@ -4304,6 +4304,25 @@ public final class NotificationPanelViewController implements Dumpable {
 
     private final class ConfigurationListener implements
             ConfigurationController.ConfigurationListener {
+    private class HeightListener implements QS.HeightListener {
+        public void onQsHeightChanged() {
+            mQsMaxExpansionHeight = mQs != null ? mQs.getDesiredHeight() : 0;
+            if (mQsExpanded && mQsFullyExpanded) {
+                mQsExpansionHeight = mQsMaxExpansionHeight;
+                requestScrollerTopPaddingUpdate(false /* animate */);
+                updateExpandedHeightToMaxHeight();
+            }
+            if (mAccessibilityManager.isEnabled()) {
+                mView.setAccessibilityPaneTitle(determineAccessibilityPaneTitle());
+            }
+            mNotificationStackScrollLayoutController.setMaxTopPadding(mQsMaxExpansionHeight);
+            float qsExpansionFraction = computeQsExpansionFraction();
+            int qsPanelBottomY = calculateQsBottomPosition(qsExpansionFraction);
+            mScrimController.setQsPosition(qsExpansionFraction, qsPanelBottomY);
+        }
+    }
+
+    private class ConfigurationListener implements ConfigurationController.ConfigurationListener {
         @Override
         public void onThemeChanged() {
             debugLog("onThemeChanged");

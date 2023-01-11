@@ -39,4 +39,7 @@
     <!-- Ignore post running notifications for selected apps -->
     <java-symbol type="array" name="config_postNotificationIgnoredApps" />
 
+    <!-- Camera -->
+    <java-symbol type="array" name="config_cameraHFRPrivAppList" />
+
 </resources>
